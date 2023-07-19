@@ -6,7 +6,7 @@ class SecondView extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-        color:Colors.green
+        child: Text("두 번째",style: TextStyle(fontSize: 30),),
     );
   }
 }

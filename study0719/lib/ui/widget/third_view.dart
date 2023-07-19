@@ -6,7 +6,7 @@ class ThirdView extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-        color:Colors.deepPurple
+        child: Text("세 번째",style: TextStyle(fontSize: 30),),
     );
   }
 }

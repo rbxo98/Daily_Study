@@ -5,7 +5,7 @@ class FirstView extends ConsumerWidget{
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-        color:Colors.blue
+      child: Text("첫 번째",style: TextStyle(fontSize: 30),),
     );
   }
 }

@@ -4,7 +4,7 @@ import 'app/app.dart';
 import 'app/config/config.dart';
 
 void main()async{
-  await dotenv.load(fileName:AppPath.envPath);
+  await dotenv.load(fileName:EnvPath.envPath);
   init();
 }
 
