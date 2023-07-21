@@ -12,6 +12,7 @@ for _ in range(M):
     sp,ep=map(int,input().split())
     footprint=[False for _ in range(N+1)]
     que=deque([[sp,0]])
+    footprint[sp]=True
     cnt=0
     find=False
     while not find:
