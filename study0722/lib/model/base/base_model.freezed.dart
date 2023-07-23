@@ -20,7 +20,7 @@ BaseResponse _$BaseResponseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$BaseResponse {
-  Map<String, dynamic> get response => throw _privateConstructorUsedError;
+  ResponeModel get response => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -34,7 +34,9 @@ abstract class $BaseResponseCopyWith<$Res> {
           BaseResponse value, $Res Function(BaseResponse) then) =
       _$BaseResponseCopyWithImpl<$Res, BaseResponse>;
   @useResult
-  $Res call({Map<String, dynamic> response});
+  $Res call({ResponeModel response});
+
+  $ResponeModelCopyWith<$Res> get response;
 }
 
 /// @nodoc
@@ -56,8 +58,16 @@ class _$BaseResponseCopyWithImpl<$Res, $Val extends BaseResponse>
       response: null == response
           ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as ResponeModel,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $ResponeModelCopyWith<$Res> get response {
+    return $ResponeModelCopyWith<$Res>(_value.response, (value) {
+      return _then(_value.copyWith(response: value) as $Val);
+    });
   }
 }
 
@@ -69,7 +79,10 @@ abstract class _$$_BaseResponseCopyWith<$Res>
       __$$_BaseResponseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, dynamic> response});
+  $Res call({ResponeModel response});
+
+  @override
+  $ResponeModelCopyWith<$Res> get response;
 }
 
 /// @nodoc
@@ -87,9 +100,9 @@ class __$$_BaseResponseCopyWithImpl<$Res>
   }) {
     return _then(_$_BaseResponse(
       response: null == response
-          ? _value._response
+          ? _value.response
           : response // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as ResponeModel,
     ));
   }
 }
@@ -97,19 +110,13 @@ class __$$_BaseResponseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_BaseResponse implements _BaseResponse {
-  _$_BaseResponse({required final Map<String, dynamic> response})
-      : _response = response;
+  _$_BaseResponse({required this.response});
 
   factory _$_BaseResponse.fromJson(Map<String, dynamic> json) =>
       _$$_BaseResponseFromJson(json);
 
-  final Map<String, dynamic> _response;
   @override
-  Map<String, dynamic> get response {
-    if (_response is EqualUnmodifiableMapView) return _response;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_response);
-  }
+  final ResponeModel response;
 
   @override
   String toString() {
@@ -121,13 +128,13 @@ class _$_BaseResponse implements _BaseResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_BaseResponse &&
-            const DeepCollectionEquality().equals(other._response, _response));
+            (identical(other.response, response) ||
+                other.response == response));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_response));
+  int get hashCode => Object.hash(runtimeType, response);
 
   @JsonKey(ignore: true)
   @override
@@ -144,14 +151,14 @@ class _$_BaseResponse implements _BaseResponse {
 }
 
 abstract class _BaseResponse implements BaseResponse {
-  factory _BaseResponse({required final Map<String, dynamic> response}) =
+  factory _BaseResponse({required final ResponeModel response}) =
       _$_BaseResponse;
 
   factory _BaseResponse.fromJson(Map<String, dynamic> json) =
       _$_BaseResponse.fromJson;
 
   @override
-  Map<String, dynamic> get response;
+  ResponeModel get response;
   @override
   @JsonKey(ignore: true)
   _$$_BaseResponseCopyWith<_$_BaseResponse> get copyWith =>
@@ -164,8 +171,8 @@ ResponeModel _$ResponeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResponeModel {
-  Map<String, dynamic> get header => throw _privateConstructorUsedError;
-  Map<String, dynamic> get body => throw _privateConstructorUsedError;
+  HeaderModel get header => throw _privateConstructorUsedError;
+  BodyModel get body => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -179,7 +186,10 @@ abstract class $ResponeModelCopyWith<$Res> {
           ResponeModel value, $Res Function(ResponeModel) then) =
       _$ResponeModelCopyWithImpl<$Res, ResponeModel>;
   @useResult
-  $Res call({Map<String, dynamic> header, Map<String, dynamic> body});
+  $Res call({HeaderModel header, BodyModel body});
+
+  $HeaderModelCopyWith<$Res> get header;
+  $BodyModelCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -202,12 +212,28 @@ class _$ResponeModelCopyWithImpl<$Res, $Val extends ResponeModel>
       header: null == header
           ? _value.header
           : header // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as HeaderModel,
       body: null == body
           ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as BodyModel,
     ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $HeaderModelCopyWith<$Res> get header {
+    return $HeaderModelCopyWith<$Res>(_value.header, (value) {
+      return _then(_value.copyWith(header: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $BodyModelCopyWith<$Res> get body {
+    return $BodyModelCopyWith<$Res>(_value.body, (value) {
+      return _then(_value.copyWith(body: value) as $Val);
+    });
   }
 }
 
@@ -219,7 +245,12 @@ abstract class _$$_ResponeModelCopyWith<$Res>
       __$$_ResponeModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({Map<String, dynamic> header, Map<String, dynamic> body});
+  $Res call({HeaderModel header, BodyModel body});
+
+  @override
+  $HeaderModelCopyWith<$Res> get header;
+  @override
+  $BodyModelCopyWith<$Res> get body;
 }
 
 /// @nodoc
@@ -238,13 +269,13 @@ class __$$_ResponeModelCopyWithImpl<$Res>
   }) {
     return _then(_$_ResponeModel(
       header: null == header
-          ? _value._header
+          ? _value.header
           : header // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as HeaderModel,
       body: null == body
-          ? _value._body
+          ? _value.body
           : body // ignore: cast_nullable_to_non_nullable
-              as Map<String, dynamic>,
+              as BodyModel,
     ));
   }
 }
@@ -252,30 +283,15 @@ class __$$_ResponeModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ResponeModel implements _ResponeModel {
-  _$_ResponeModel(
-      {required final Map<String, dynamic> header,
-      required final Map<String, dynamic> body})
-      : _header = header,
-        _body = body;
+  _$_ResponeModel({required this.header, required this.body});
 
   factory _$_ResponeModel.fromJson(Map<String, dynamic> json) =>
       _$$_ResponeModelFromJson(json);
 
-  final Map<String, dynamic> _header;
   @override
-  Map<String, dynamic> get header {
-    if (_header is EqualUnmodifiableMapView) return _header;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_header);
-  }
-
-  final Map<String, dynamic> _body;
+  final HeaderModel header;
   @override
-  Map<String, dynamic> get body {
-    if (_body is EqualUnmodifiableMapView) return _body;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_body);
-  }
+  final BodyModel body;
 
   @override
   String toString() {
@@ -287,16 +303,13 @@ class _$_ResponeModel implements _ResponeModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ResponeModel &&
-            const DeepCollectionEquality().equals(other._header, _header) &&
-            const DeepCollectionEquality().equals(other._body, _body));
+            (identical(other.header, header) || other.header == header) &&
+            (identical(other.body, body) || other.body == body));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_header),
-      const DeepCollectionEquality().hash(_body));
+  int get hashCode => Object.hash(runtimeType, header, body);
 
   @JsonKey(ignore: true)
   @override
@@ -314,16 +327,16 @@ class _$_ResponeModel implements _ResponeModel {
 
 abstract class _ResponeModel implements ResponeModel {
   factory _ResponeModel(
-      {required final Map<String, dynamic> header,
-      required final Map<String, dynamic> body}) = _$_ResponeModel;
+      {required final HeaderModel header,
+      required final BodyModel body}) = _$_ResponeModel;
 
   factory _ResponeModel.fromJson(Map<String, dynamic> json) =
       _$_ResponeModel.fromJson;
 
   @override
-  Map<String, dynamic> get header;
+  HeaderModel get header;
   @override
-  Map<String, dynamic> get body;
+  BodyModel get body;
   @override
   @JsonKey(ignore: true)
   _$$_ResponeModelCopyWith<_$_ResponeModel> get copyWith =>
@@ -337,7 +350,7 @@ HeaderModel _$HeaderModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$HeaderModel {
   String get resultCode => throw _privateConstructorUsedError;
-  String get reslutlMsg => throw _privateConstructorUsedError;
+  String get resultMsg => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -351,7 +364,7 @@ abstract class $HeaderModelCopyWith<$Res> {
           HeaderModel value, $Res Function(HeaderModel) then) =
       _$HeaderModelCopyWithImpl<$Res, HeaderModel>;
   @useResult
-  $Res call({String resultCode, String reslutlMsg});
+  $Res call({String resultCode, String resultMsg});
 }
 
 /// @nodoc
@@ -368,16 +381,16 @@ class _$HeaderModelCopyWithImpl<$Res, $Val extends HeaderModel>
   @override
   $Res call({
     Object? resultCode = null,
-    Object? reslutlMsg = null,
+    Object? resultMsg = null,
   }) {
     return _then(_value.copyWith(
       resultCode: null == resultCode
           ? _value.resultCode
           : resultCode // ignore: cast_nullable_to_non_nullable
               as String,
-      reslutlMsg: null == reslutlMsg
-          ? _value.reslutlMsg
-          : reslutlMsg // ignore: cast_nullable_to_non_nullable
+      resultMsg: null == resultMsg
+          ? _value.resultMsg
+          : resultMsg // ignore: cast_nullable_to_non_nullable
               as String,
     ) as $Val);
   }
@@ -391,7 +404,7 @@ abstract class _$$_HeaderModelCopyWith<$Res>
       __$$_HeaderModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String resultCode, String reslutlMsg});
+  $Res call({String resultCode, String resultMsg});
 }
 
 /// @nodoc
@@ -406,16 +419,16 @@ class __$$_HeaderModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? resultCode = null,
-    Object? reslutlMsg = null,
+    Object? resultMsg = null,
   }) {
     return _then(_$_HeaderModel(
       resultCode: null == resultCode
           ? _value.resultCode
           : resultCode // ignore: cast_nullable_to_non_nullable
               as String,
-      reslutlMsg: null == reslutlMsg
-          ? _value.reslutlMsg
-          : reslutlMsg // ignore: cast_nullable_to_non_nullable
+      resultMsg: null == resultMsg
+          ? _value.resultMsg
+          : resultMsg // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -424,7 +437,7 @@ class __$$_HeaderModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_HeaderModel implements _HeaderModel {
-  _$_HeaderModel({required this.resultCode, required this.reslutlMsg});
+  _$_HeaderModel({required this.resultCode, required this.resultMsg});
 
   factory _$_HeaderModel.fromJson(Map<String, dynamic> json) =>
       _$$_HeaderModelFromJson(json);
@@ -432,11 +445,11 @@ class _$_HeaderModel implements _HeaderModel {
   @override
   final String resultCode;
   @override
-  final String reslutlMsg;
+  final String resultMsg;
 
   @override
   String toString() {
-    return 'HeaderModel(resultCode: $resultCode, reslutlMsg: $reslutlMsg)';
+    return 'HeaderModel(resultCode: $resultCode, resultMsg: $resultMsg)';
   }
 
   @override
@@ -446,13 +459,13 @@ class _$_HeaderModel implements _HeaderModel {
             other is _$_HeaderModel &&
             (identical(other.resultCode, resultCode) ||
                 other.resultCode == resultCode) &&
-            (identical(other.reslutlMsg, reslutlMsg) ||
-                other.reslutlMsg == reslutlMsg));
+            (identical(other.resultMsg, resultMsg) ||
+                other.resultMsg == resultMsg));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, resultCode, reslutlMsg);
+  int get hashCode => Object.hash(runtimeType, resultCode, resultMsg);
 
   @JsonKey(ignore: true)
   @override
@@ -471,7 +484,7 @@ class _$_HeaderModel implements _HeaderModel {
 abstract class _HeaderModel implements HeaderModel {
   factory _HeaderModel(
       {required final String resultCode,
-      required final String reslutlMsg}) = _$_HeaderModel;
+      required final String resultMsg}) = _$_HeaderModel;
 
   factory _HeaderModel.fromJson(Map<String, dynamic> json) =
       _$_HeaderModel.fromJson;
@@ -479,7 +492,7 @@ abstract class _HeaderModel implements HeaderModel {
   @override
   String get resultCode;
   @override
-  String get reslutlMsg;
+  String get resultMsg;
   @override
   @JsonKey(ignore: true)
   _$$_HeaderModelCopyWith<_$_HeaderModel> get copyWith =>

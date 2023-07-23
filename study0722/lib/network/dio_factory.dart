@@ -4,7 +4,8 @@ import 'package:study0722/config/config.dart';
 import 'package:dio/dio.dart';
 class DioFactory{
   static Dio getDio(){
-    Dio dio = Dio(
+    Dio dio =
+    Dio(
       BaseOptions(
         baseUrl: dotenv.get("BASE_URL"),
         connectTimeout: Duration(seconds: 30),

@@ -11,7 +11,6 @@ final dropDownItemIndex = StateProvider<int>((ref) => 0);
 
 Future<List<WeatherModel>> getWeather(String date,int time, int nx, int ny)async {
   final Dio _dio = DioFactory.getDio();
-  print(_dio.options.baseUrl);
   List<WeatherModel> weatherList = [];
   try {
     Map<String, dynamic> params = {
@@ -29,12 +28,9 @@ Future<List<WeatherModel>> getWeather(String date,int time, int nx, int ny)async
         queryParameters: params
     );
     BaseResponse baseResponse = BaseResponse.fromJson(response.data);
-    print(baseResponse.response['header']);
-    if (baseResponse.response['header']['resultCode'] == "00") {
-      for (var data in baseResponse.response['body']['items']['item']!) {
-        print(data);
+    if (baseResponse.response.header.resultCode == "00") {
+      for (var data in baseResponse.response.body.items['item']!) {
         WeatherModel fromjson = WeatherModel.fromJson(data);
-        print("d");
         weatherList.add(fromjson);
       }
     }

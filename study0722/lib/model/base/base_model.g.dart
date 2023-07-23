@@ -8,7 +8,7 @@ part of 'base_model.dart';
 
 _$_BaseResponse _$$_BaseResponseFromJson(Map<String, dynamic> json) =>
     _$_BaseResponse(
-      response: json['response'] as Map<String, dynamic>,
+      response: ResponeModel.fromJson(json['response'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_BaseResponseToJson(_$_BaseResponse instance) =>
@@ -18,8 +18,8 @@ Map<String, dynamic> _$$_BaseResponseToJson(_$_BaseResponse instance) =>
 
 _$_ResponeModel _$$_ResponeModelFromJson(Map<String, dynamic> json) =>
     _$_ResponeModel(
-      header: json['header'] as Map<String, dynamic>,
-      body: json['body'] as Map<String, dynamic>,
+      header: HeaderModel.fromJson(json['header'] as Map<String, dynamic>),
+      body: BodyModel.fromJson(json['body'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ResponeModelToJson(_$_ResponeModel instance) =>
@@ -31,13 +31,13 @@ Map<String, dynamic> _$$_ResponeModelToJson(_$_ResponeModel instance) =>
 _$_HeaderModel _$$_HeaderModelFromJson(Map<String, dynamic> json) =>
     _$_HeaderModel(
       resultCode: json['resultCode'] as String,
-      reslutlMsg: json['reslutlMsg'] as String,
+      resultMsg: json['resultMsg'] as String,
     );
 
 Map<String, dynamic> _$$_HeaderModelToJson(_$_HeaderModel instance) =>
     <String, dynamic>{
       'resultCode': instance.resultCode,
-      'reslutlMsg': instance.reslutlMsg,
+      'resultMsg': instance.resultMsg,
     };
 
 _$_BodyModel _$$_BodyModelFromJson(Map<String, dynamic> json) => _$_BodyModel(

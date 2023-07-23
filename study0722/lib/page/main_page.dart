@@ -41,7 +41,7 @@ class _MainPageState extends ConsumerState<MainPage> {
                   thickness: 3,
                   color: Colors.white,
                 ),
-                Text("날짜 입력 (최근 1년 이내)"),
+                Text("날짜 입력 (1일 이내)"),
                 TextField(
                   controller: dateController,
                   maxLength: 8,

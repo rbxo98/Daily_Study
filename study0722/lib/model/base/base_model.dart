@@ -10,7 +10,7 @@ part 'base_model.g.dart';
 @freezed
 class BaseResponse with _$BaseResponse{
    factory BaseResponse({
-    required Map<String,dynamic> response,
+    required ResponeModel response,
   }) = _BaseResponse;
   factory BaseResponse.fromJson(Map<String, dynamic> json) =>
       _$BaseResponseFromJson(json);
@@ -19,8 +19,8 @@ class BaseResponse with _$BaseResponse{
 @freezed
 class ResponeModel with _$ResponeModel{
   factory ResponeModel({
-    required Map<String,dynamic> header,
-    required Map<String,dynamic> body,
+    required HeaderModel header,
+    required BodyModel body,
   }) = _ResponeModel;
   factory ResponeModel.fromJson(Map<String, dynamic> json) =>
       _$ResponeModelFromJson(json);
@@ -30,7 +30,7 @@ class ResponeModel with _$ResponeModel{
 class HeaderModel with _$HeaderModel{
    factory HeaderModel({
     required String resultCode,
-    required String reslutlMsg,
+    required String resultMsg,
 }) = _HeaderModel;
    factory HeaderModel.fromJson(Map<String, dynamic> json) =>
        _$HeaderModelFromJson(json);
