@@ -1,0 +1,44 @@
+import sys
+input = sys.stdin.readline
+
+table=[]
+for _ in range(int(input())):
+    table.append(list(map(int,input().split())))
+
+def dnq(div:list):
+    if len(div)>1:
+        mid=len(div)//2
+        left=dnq(div[:mid])
+        right=dnq(div[mid:])
+        array=[]
+        leftidx=0
+        rightidx=0
+        while len(array)<len(div):
+            if leftidx == len(left):
+                for x in range(rightidx,len(right)):
+                    array.append(right[x])
+                return array
+            if rightidx == len(right):
+                for x in range(leftidx,len(left)):
+                    array.append(left[x])
+                return array
+
+            if left[leftidx][1] < right[rightidx][1]:
+                array.append(left[leftidx])
+                leftidx+=1
+            elif left[leftidx][1] > right[rightidx][1]:
+                array.append(right[rightidx])
+                rightidx+=1
+            else:
+                 if left[leftidx][0] < right[rightidx][0]:
+                    array.append(left[leftidx])
+                    leftidx+=1
+                 elif left[leftidx][0] > right[rightidx][0]:
+                    array.append(right[rightidx])
+                    rightidx+=1
+        return array
+    else:
+        return div
+
+for i in dnq(table):
+    print(i[0],i[1])

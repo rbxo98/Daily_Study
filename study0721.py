@@ -29,7 +29,8 @@
 # print(total)
 
 # https://www.acmicpc.net/problem/1707
-
+import sys
+input = sys.stdin.readline
 def dfs(node,color):
     global footprint
     global colors
@@ -38,7 +39,6 @@ def dfs(node,color):
         if not footprint[next]:
             footprint[next]=True
             dfs(next,not color)
-
 
 
 for _ in range(int(input())):
@@ -55,7 +55,6 @@ for _ in range(int(input())):
             footprint[x]=True
             colors[x].append(True)
             dfs(x,False)
-    print(colors)
     isPossible=True
     for result in colors[1:]:
         isPossible &= (sum(result)==len(result)) or (sum(result)==0)
