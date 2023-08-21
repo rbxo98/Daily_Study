@@ -37,3 +37,4 @@ for _ in range(M):
         vect+=cnt
         vect%=4
         robots[num]=[x,y,vect]
+print("OK")

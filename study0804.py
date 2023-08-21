@@ -80,7 +80,7 @@ for k in range(1,N+1):
     if newN%3!=0:
         cnt+=newN%3
         newN-=newN%3
-    result=cnt*(2**((newN//3)-1))
+    result=cnt*(2**(newN//3))
     print(result)
         
 

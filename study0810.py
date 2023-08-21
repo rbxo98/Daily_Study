@@ -19,16 +19,14 @@
 
 import sys
 input = sys.stdin.readline
-print("abcd"[::-1])
 
-start = input()
-end = input()
+start = list(input().rstrip())
+end = list(input().rstrip())
 
 for _ in range(len(end)):
-    w = end[-1]
-    end=end[:-1]
+    w = end.pop(len(end)-1)
     if w=='B':
-        end=end[::-1]
+        end=list(reversed(end))
     if end==start:
         print(1)
         exit(0)
@@ -42,6 +40,6 @@ print(1 if "".join([e.pop(len(e)-1 if e[-1]=='A' else 0) for _ in range(len(e)-l
 1001 9
 0110 -6
 
-110010 2 16 32 50
-001101 13
+110010 2
+001101
 '''
